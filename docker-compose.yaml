@@ -15,6 +15,9 @@ services:
     depends_on: #Se asegura de que mosquitto este listo antes de arrancar
       - mosquitto
     command: python -u sensor.py #Para ver mensajes en tiempo real
+    volumes:
+      - ./sensor/logs:/app/logs   # logs persistentes del sensor
+      - ./sensor/data:/app/data   # si querés guardar datos generados
 
   consumidor:
     build:
@@ -23,3 +26,6 @@ services:
     depends_on:
       - mosquitto
     command: python -u consumidor.py
+    volumes:
+      - ./consumidor/logs:/app/logs   # logs persistentes del consumidor
+      - ./consumidor/data:/app/data   # si querés guardar resultados
