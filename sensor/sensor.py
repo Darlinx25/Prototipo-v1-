@@ -4,7 +4,7 @@ import random
 import paho.mqtt.client as mqtt
 
 # Conectamos al broker usando el nombre del servicio en Compose
-client = mqtt.Client()
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, protocol=mqtt.MQTTv311)
 client.connect("mosquitto", 1883, 60)
 
 while True:
