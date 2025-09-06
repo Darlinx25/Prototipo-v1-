@@ -15,5 +15,7 @@ while True:
     }
     payload = json.dumps(msg)
     client.publish("habitacion/ambiente", payload)
-    print("Publicado:", payload)
+    import logging
+    logging.basicConfig(filename='/app/logs/sensor.log', level=logging.INFO)
+    logging.info(payload)
     time.sleep(1)
