@@ -14,7 +14,7 @@ services:
     build: #Crea la imagen usando el dockerfile
       context: ./sensor 
       dockerfile: Dockerfile.sensor
-    dependes_on: #Se asegura de que mosquitto este listo antes de arrancar
+    depends_on: #Se asegura de que mosquitto este listo antes de arrancar
       - mosquitto
 
   consumidor:
