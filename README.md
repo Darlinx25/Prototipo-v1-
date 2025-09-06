@@ -38,10 +38,10 @@ Prototipo-v1/
 ```
 ## Uso
 
-- docker compose up -d                #Levantar contenedores:
-- docker compose logs -f consumidor   # mensajes recibidos
-- docker compose logs -f sensor       # mensajes publicados
-- docker compose logs -f mosquitto    # actividad del broker
+- docker compose up -d                # Levantar contenedores
+- docker compose logs -f consumidor   # Mensajes recibidos
+- docker compose logs -f sensor       # Mensajes publicados
+- docker compose logs -f mosquitto    # Actividad del broker
 
 ## Implementación
 
