@@ -16,8 +16,8 @@ services:
       - mosquitto
     command: python -u sensor.py #Para ver mensajes en tiempo real
     volumes:
-      - ./sensor/logs:/app/logs   # logs persistentes del sensor
-      - ./sensor/data:/app/data   # si querés guardar datos generados
+      - ./sensor/logs:/app/logs  
+      - ./sensor/data:/app/data   
 
   consumidor:
     build:
@@ -27,5 +27,5 @@ services:
       - mosquitto
     command: python -u consumidor.py
     volumes:
-      - ./consumidor/logs:/app/logs   # logs persistentes del consumidor
-      - ./consumidor/data:/app/data   # si querés guardar resultados
+      - ./consumidor/logs:/app/logs   
+      - ./consumidor/data:/app/data   
