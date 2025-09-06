@@ -21,3 +21,4 @@ services:
       dockerfile: Dockerfile.consumidor
     depends_on:
       - mosquitto
+    command: python -u consumidor.py
