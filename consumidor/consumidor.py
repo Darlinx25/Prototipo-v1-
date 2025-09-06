@@ -13,4 +13,4 @@ client = mqtt.Client(client_id="", protocol=mqtt.MQTTv311) #Crea un cliente MQTT
 client.on_message = on_message #Asigna la función on_message para manejar mensajes.
 client.connect("mosquitto", 1883, 60) #Conecta al broker llamado "mosquitto" en el puerto 1883.
 client.subscribe("habitacion/ambiente") #Se suscribe al topic "habitacion/ambiente".
-client.loop_forever() #loop_forever() → entra en un loop infinito, esperando mensajes y ejecutando on_message.
+client.loop_forever() #loop_forever() → Entra en un loop infinito, esperando mensajes y ejecutando on_message.
