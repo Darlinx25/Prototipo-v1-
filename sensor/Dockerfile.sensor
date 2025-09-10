@@ -1,5 +1,4 @@
-FROM python:3.11-slim
+FROM eclipse-temurin:24-jdk
 WORKDIR /app
-COPY sensor.py .
-RUN pip install --no-cache-dir "paho-mqtt>=2.0"
-CMD ["python","sensor.py"]
+COPY sensor.jar .
+CMD ["java", "-jar", "sensor.jar"]

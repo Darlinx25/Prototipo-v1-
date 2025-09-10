@@ -1,5 +1,4 @@
-FROM python:3.11-slim
+FROM eclipse-temurin:24-jdk
 WORKDIR /app
-COPY consumidor.py .
-RUN pip install --no-cache-dir "paho-mqtt>=2.0"
-CMD ["python","consumidor.py"]
+COPY consumidor.jar .
+CMD ["java", "-jar", "consumidor.jar"]

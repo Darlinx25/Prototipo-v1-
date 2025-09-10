@@ -10,11 +10,10 @@ services:
 
   sensor:
     build: #Crea la imagen usando el dockerfile
-      context: ./sensor 
+      context: ./sensor
       dockerfile: Dockerfile.sensor
     depends_on: #Se asegura de que mosquitto este listo antes de arrancar
       - mosquitto
-    command: python -u sensor.py #Para ver mensajes en tiempo real
     volumes:
       - ./sensor/logs:/app/logs  
       - ./sensor/data:/app/data   
@@ -25,7 +24,6 @@ services:
       dockerfile: Dockerfile.consumidor
     depends_on:
       - mosquitto
-    command: python -u consumidor.py
     volumes:
       - ./consumidor/logs:/app/logs   
       - ./consumidor/data:/app/data   
