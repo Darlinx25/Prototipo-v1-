@@ -29,10 +29,10 @@ Prototipo-v1/
 │  └─ log/
 ├─ sensor/
 │  ├─ Dockerfile.sensor
-│  └─ sensor.py
+│  └─ sensor.jar
 ├─ consumidor/
 │  ├─ Dockerfile.consumidor
-│  └─ consumidor.py
+│  └─ consumidor.jar
 ├─ publicar.sh
 └─ consumir.sh
 ```
@@ -42,13 +42,3 @@ Prototipo-v1/
 - docker compose logs -f consumidor   # Mensajes recibidos
 - docker compose logs -f sensor       # Mensajes publicados
 - docker compose logs -f mosquitto    # Actividad del broker
-
-## Implementación
-
-- Lenguaje: Python 3.11
-- Librería MQTT: paho-mqtt
-- Contenedores Docker:
-- Broker: eclipse-mosquitto:latest
-- Sensor: Python + sensor.py
-- Consumidor: Python + consumidor.py
-- Docker Compose orquesta los tres contenedores en la misma red.
